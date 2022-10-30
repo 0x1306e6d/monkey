@@ -32,7 +32,7 @@ type Lexer struct {
 	input        string
 	position     int
 	readPosition int
-	ch           byte // TODO: support Unicode
+	ch           byte // TODO(GH-1): support Unicode as an identifier name
 }
 
 func New(input string) *Lexer {
@@ -72,7 +72,8 @@ func (l *Lexer) NextToken() token.Token {
 			tok.Type = token.LookupIdent(tok.Literal)
 			return tok
 		} else if isDigit(l.ch) {
-			// support float, double, hex, and oct
+			// TODO(GH-2): support float and double
+			// TODO(GH-3): support hex and oct
 			tok.Type = token.INT
 			tok.Literal = l.readNumber()
 			return tok
