@@ -38,7 +38,7 @@ const (
 	INT       = "INT"
 	ASSIGN    = "="
 	PLUS      = "+"
-	COMMA     = "="
+	COMMA     = ","
 	SEMICOLON = ";"
 	LPAREN    = "("
 	RPAREN    = ")"
